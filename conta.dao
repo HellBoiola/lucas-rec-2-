@@ -1,0 +1,43 @@
+package sample.controller;
+
+import sample.model.Conta;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ContaDAO {
+    private List<Conta> contas;
+
+    public ContaDAO() {
+        contas = new ArrayList<Conta>();
+    }
+
+    public void add(String agencia, String conta) {
+        Conta conta1 = new Conta();
+        conta1.setNumeroAgencia(agencia);
+        conta1.setNumeroConta(conta);
+        contas.add(conta1);
+    }
+
+    public void sacar(String ag, String cc,
+                      double valor)
+
+    public void depositar(String ag, String cc,
+                          double valor) {
+
+
+        contas.forEach(conta -> {
+            if (conta.getNumeroAgencia().equals(ag) &&
+                    conta.getNumeroConta().equals(cc)) {
+                conta.depositar(valor);
+            }
+        });
+
+    }
+
+
+    @Override
+    public String toString() {
+        return contas.toString();
+    }
+}
